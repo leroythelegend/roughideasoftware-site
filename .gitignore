@@ -1,11 +1,28 @@
 # macOS
 .DS_Store
 **/.DS_Store
+._*
+Icon?
+
+# Windows
+Thumbs.db
+Desktop.ini
 
 # Editor / IDE
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
+
+# Secrets / env
+.env
+.env.*
+!.env.example
 
 # Logs
 *.log
+
+# Local backups
+*.bak
+*.orig
