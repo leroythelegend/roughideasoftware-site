@@ -1,17 +1,262 @@
-<h1>One Third Umpire</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>One Third Umpire — Cricket umpiring made simple</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="One Third Umpire helps square leg umpires make better decisions with video replay and a built-in digital clicker.">
 
-<p>A cricket umpiring tool that helps review close catches and faint edges.</p>
+<meta property="og:title" content="One Third Umpire — Cricket umpiring made simple">
+<meta property="og:description" content="Video replay and a built-in digital clicker for square leg umpires.">
+<meta property="og:type" content="website">
 
-<p>
-<a href="https://apps.apple.com/au/app/one-third-umpire/id1501760643">
-Download on the App Store
-</a>
-</p>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 
-<p>
-<a href="/one-third-umpire/support.html">Support</a>
-</p>
+<style>
+  :root {
+    --accent: #2E7D32;
+    --accent-dark: #1B5E20;
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --bg-soft: #f2f8f2;
+  }
+  html, body { height: 100%; }
+  body {
+    font-family: "Lato", sans-serif;
+    color: var(--ink);
+    margin: 0;
+  }
 
-<p>
-<a href="/privacy.html">Privacy Policy</a>
-</p>
+  /* Hero */
+  .hero {
+    background: linear-gradient(180deg, var(--bg-soft) 0%, #ffffff 100%);
+    padding: 80px 20px 24px;
+    text-align: center;
+  }
+  .hero .badge-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 900;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero .tagline {
+    font-size: 22px;
+    color: var(--muted);
+    margin: 0 auto 32px;
+    max-width: 560px;
+  }
+  .hero .app-store img { height: 56px; }
+
+  /* Section */
+  section { padding: 40px 20px 72px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .section-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 12px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .section-sub {
+    font-size: 18px;
+    color: var(--muted);
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 48px;
+  }
+
+  /* Features grid */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .feature {
+    padding: 28px;
+    border-radius: 16px;
+    background: #fafafa;
+    border: 1px solid #eee;
+  }
+  .feature h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .feature p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .feature .icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  /* Screenshots */
+  .screens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+  .screens.four-up { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .screens.four-up img { max-width: 160px; }
+  .screens img {
+    max-width: 200px;
+    width: 100%;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.12));
+  }
+
+  /* Watch section */
+  .watch-section { background: #fafafa; padding: 64px 20px; }
+  .screens .caption {
+    margin-top: 16px;
+    font-weight: 700;
+  }
+  .screens .caption-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    background: var(--accent);
+    color: #fff;
+    padding: 72px 20px;
+  }
+  .cta h2 { margin: 0 0 12px; font-size: 36px; font-weight: 900; }
+  .cta p { margin: 0 0 32px; font-size: 18px; opacity: 0.9; }
+  .cta img { height: 56px; }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: #fff;
+    padding: 48px 20px;
+    text-align: center;
+  }
+  footer a { color: #fff; text-decoration: none; margin: 0 12px; }
+  footer a:hover { text-decoration: underline; }
+  footer .small { color: #888; font-size: 13px; margin-top: 16px; }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 40px; }
+    .hero .tagline { font-size: 18px; }
+    .features, .screens { grid-template-columns: 1fr; }
+    .screens.four-up { grid-template-columns: repeat(2, 1fr); }
+    .section-title { font-size: 26px; }
+    .cta h2 { font-size: 28px; }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="badge-pill">iPhone &middot; iPad &middot; Apple Watch</span>
+    <h1>One Third Umpire</h1>
+    <p class="tagline">Cricket umpiring made simple.</p>
+
+    <div class="container">
+      <div class="screens">
+        <div>
+          <img src="./img/cricketcounter.png" alt="Digital clicker">
+          <div class="caption">Counter</div>
+          <div class="caption-sub">Count balls with a tap</div>
+        </div>
+        <div>
+          <img src="./img/recorder.png" alt="Record a delivery">
+          <div class="caption">Record</div>
+          <div class="caption-sub">Capture every delivery</div>
+        </div>
+        <div>
+          <img src="./img/preview.png" alt="Replay a delivery">
+          <div class="caption">Replay</div>
+          <div class="caption-sub">Review in slow motion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Apple Watch -->
+  <section class="watch-section">
+    <div class="container">
+      <h2 class="section-title">Also on your wrist</h2>
+      <p class="section-sub">Keep track of the match from Apple Watch — balls, overs, runs, and the score, right where you need them.</p>
+
+      <div class="screens four-up">
+        <div>
+          <img src="./img/balls.png" alt="Balls on Apple Watch">
+          <div class="caption">Balls</div>
+        </div>
+        <div>
+          <img src="./img/overs.png" alt="Overs on Apple Watch">
+          <div class="caption">Overs</div>
+        </div>
+        <div>
+          <img src="./img/runs.png" alt="Runs on Apple Watch">
+          <div class="caption">Runs</div>
+        </div>
+        <div>
+          <img src="./img/score.png" alt="Score on Apple Watch">
+          <div class="caption">Score</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a class="app-store" href="https://apps.apple.com/us/app/one-third-umpire/id1501760643">
+          <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="height: 56px;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Better calls at square leg</h2>
+      <p class="section-sub">One Third Umpire helps square leg umpires make better decisions with video replay and a built-in digital clicker — no paper, no guesswork.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">6</div>
+          <h3>Digital clicker</h3>
+          <p>Tap through overs without losing count. Track balls, overs, and wickets with a clean, glanceable interface.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">▶</div>
+          <h3>Instant replay</h3>
+          <p>Record every delivery and review the moment in slow motion when a tough call is made.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h3>Private by default</h3>
+          <p>Everything stays on your device. No accounts, no tracking, no data leaves your phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready for the next match?</h2>
+    <p>Download One Third Umpire on the App Store.</p>
+    <a href="https://apps.apple.com/us/app/one-third-umpire/id1501760643">
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83" alt="Download on the App Store">
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="./privacy.html">Privacy</a>
+      <a href="mailto:roughideasoftware@gmail.com">Contact</a>
+    </div>
+    <div class="small">© Rough Idea Software</div>
+  </footer>
+
+</body>
+</html>
