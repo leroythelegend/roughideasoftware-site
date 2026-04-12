@@ -1,45 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Rough Idea Software</title>
+<title>Rough Idea Software — Simple, practical apps</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rough Idea Software makes simple, practical apps for iPhone, iPad, and Apple Watch.">
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<meta property="og:title" content="Rough Idea Software">
+<meta property="og:description" content="Simple, practical apps for iPhone, iPad, and Apple Watch.">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 
 <style>
-body { font-family: "Lato", sans-serif; }
-.app-card { padding: 20px; }
+  :root {
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --tomato: #E63946;
+    --tomato-soft: #fff5f4;
+    --cricket: #2E7D32;
+    --cricket-soft: #f2f8f2;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Lato", sans-serif;
+    color: var(--ink);
+    margin: 0;
+    background: #fff;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 96px 20px 48px;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero p {
+    font-size: 20px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* App cards */
+  .apps {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px 96px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .app-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    color: var(--ink);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+  }
+  .app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+  .app-card .media {
+    padding: 48px 24px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 260px;
+  }
+  .app-card .media img {
+    max-height: 220px;
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.18));
+  }
+  .app-card .media .stack {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+  }
+  .app-card .media .stack img.small {
+    max-height: 150px;
+  }
+  .app-card .media .stack img.tall {
+    max-height: 200px;
+  }
+  .app-card .body {
+    padding: 24px 28px 28px;
+    background: #fff;
+  }
+  .app-card .body h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+  .app-card .body .sub {
+    margin: 0 0 16px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .app-card .actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .app-card .button {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .app-card .app-store-badge img {
+    height: 40px;
+    display: block;
+  }
+
+  /* Card variants */
+  .card-tomato .media { background: var(--tomato-soft); }
+  .card-tomato .button { background: var(--tomato); }
+  .card-cricket .media { background: var(--cricket-soft); }
+  .card-cricket .button { background: var(--cricket); }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  footer a { color: #fff; text-decoration: none; margin: 0 12px; }
+  footer a:hover { text-decoration: underline; }
+  footer .small { color: #888; font-size: 13px; margin-top: 12px; }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .hero { padding: 64px 20px 32px; }
+    .hero h1 { font-size: 36px; }
+    .hero p { font-size: 17px; }
+    .apps { grid-template-columns: 1fr; gap: 24px; padding-bottom: 64px; }
+  }
 </style>
 </head>
 
 <body>
 
-<div class="w3-content w3-center" style="max-width:800px;padding:40px">
+  <div class="hero">
+    <h1>Rough Idea Software</h1>
+    <p>Simple, practical apps.</p>
+  </div>
 
-  <h1>Rough Idea Software</h1>
-  <p class="w3-opacity">Simple, practical apps</p>
-
-  <div class="w3-row-padding w3-padding-32">
-
-    <!-- One Third Umpire -->
-    <div class="w3-half app-card">
-      <h3>One Third Umpire</h3>
-      <p>Cricket umpiring made simple</p>
-      <a href="/one-third-umpire" class="w3-button w3-black">View App</a>
-    </div>
+  <div class="apps">
 
     <!-- Current Tomato -->
-    <div class="w3-half app-card">
-      <h3>Current Tomato</h3>
-      <p>Stay focused. One session at a time.</p>
-      <a href="/current-tomato" class="w3-button w3-black">View App</a>
+    <div class="app-card card-tomato">
+      <div class="media">
+        <div class="stack">
+          <img src="./current-tomato/img/timer.png" class="tall" alt="Current Tomato timer">
+          <img src="./current-tomato/img/widget.png" class="small" alt="Current Tomato widget">
+        </div>
+      </div>
+      <div class="body">
+        <h2>Current Tomato</h2>
+        <p class="sub">Stay focused. One session at a time. A Pomodoro timer for Apple Watch.</p>
+        <div class="actions">
+          <a href="./current-tomato/index.html" class="button">View app</a>
+          <a href="https://apps.apple.com/au/app/current-tomato/id6754945891" class="app-store-badge">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download Current Tomato on the App Store">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- One Third Umpire -->
+    <div class="app-card card-cricket">
+      <div class="media">
+        <div class="stack">
+          <img src="./one-third-umpire/img/cricketcounter.png" class="tall" alt="One Third Umpire counter">
+          <img src="./one-third-umpire/img/score.png" class="small" alt="One Third Umpire score on watch">
+        </div>
+      </div>
+      <div class="body">
+        <h2>One Third Umpire</h2>
+        <p class="sub">Cricket umpiring made simple. Video replay and a digital clicker for square leg umpires.</p>
+        <div class="actions">
+          <a href="./one-third-umpire/index.html" class="button">View app</a>
+          <a href="https://apps.apple.com/us/app/one-third-umpire/id1501760643" class="app-store-badge">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download One Third Umpire on the App Store">
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>
 
-</div>
+  <footer>
+    <div>
+      <a href="mailto:roughideasoftware@gmail.com">Contact</a>
+    </div>
+    <div class="small">© Rough Idea Software</div>
+  </footer>
 
 </body>
 </html>
