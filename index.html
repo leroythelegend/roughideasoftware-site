@@ -20,6 +20,8 @@
     --tomato-soft: #fff5f4;
     --cricket: #2E7D32;
     --cricket-soft: #f2f8f2;
+    --hops: #F7A419;
+    --hops-soft: #eef6f2;
   }
   * { box-sizing: border-box; }
   html, body { height: 100%; }
@@ -53,7 +55,7 @@
     margin: 0 auto;
     padding: 24px 20px 96px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
   }
   .app-card {
@@ -131,6 +133,14 @@
   .card-tomato .button { background: var(--tomato); }
   .card-cricket .media { background: var(--cricket-soft); }
   .card-cricket .button { background: var(--cricket); }
+  .card-hops .media { background: var(--hops-soft); }
+  .card-hops .button { background: var(--hops); }
+  .card-hops .media img { border-radius: 10px; }
+  .app-card .soon {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+  }
 
   /* Footer */
   footer {
@@ -198,6 +208,24 @@
           <a href="https://apps.apple.com/us/app/one-third-umpire/id1501760643" class="app-store-badge">
             <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download One Third Umpire on the App Store">
           </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HoppedUp -->
+    <div class="app-card card-hops">
+      <div class="media">
+        <div class="stack">
+          <img src="./hoppedup/img/nearby.png" class="tall" alt="HoppedUp nearby breweries">
+          <img src="./hoppedup/img/myhops.png" class="small" alt="HoppedUp My Hops list">
+        </div>
+      </div>
+      <div class="body">
+        <h2>HoppedUp</h2>
+        <p class="sub">Rate the beer. Skip the account. Find breweries near you and rate what you drink, anonymously.</p>
+        <div class="actions">
+          <a href="./hoppedup/index.html" class="button">View app</a>
+          <span class="soon">Coming soon to the App Store</span>
         </div>
       </div>
     </div>
