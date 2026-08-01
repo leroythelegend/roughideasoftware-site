@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HoppedUp — Rate beers at breweries, anonymously</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="HoppedUp is a beer rating app for iPhone. Find breweries near you, rate what you drink, and see what everyone else thought — with no account and no profile.">
+
+<meta property="og:title" content="HoppedUp — Rate beers at breweries, anonymously">
+<meta property="og:description" content="Find breweries near you, rate what you drink, and keep it anonymous.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+
+<style>
+  :root {
+    --amber: #F7A419;
+    --amber-deep: #E37507;
+    --teal: #14524C;
+    --foam: #F5F0E4;
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --bg-soft: #DEEEE8;
+  }
+  html, body { height: 100%; }
+  body {
+    font-family: "Lato", sans-serif;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(180deg, var(--bg-soft) 0%, #ffffff 100%);
+    padding: 80px 20px 24px;
+    text-align: center;
+  }
+  .hero .badge-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--amber);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 900;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero .tagline {
+    font-size: 22px;
+    color: var(--muted);
+    margin: 0 auto 32px;
+    max-width: 560px;
+  }
+
+  /* Section */
+  section { padding: 40px 20px 72px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .section-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 12px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .section-sub {
+    font-size: 18px;
+    color: var(--muted);
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 48px;
+  }
+
+  /* Features grid */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .feature {
+    padding: 28px;
+    border-radius: 16px;
+    background: #fafafa;
+    border: 1px solid #eee;
+  }
+  .feature h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .feature p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .feature .icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--amber); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  /* Screenshots */
+  .screens { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+  .screens img {
+    max-width: 190px;
+    width: 100%;
+    border-radius: 18px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.12));
+  }
+  .screens .caption {
+    margin-top: 16px;
+    font-weight: 700;
+  }
+  .screens .caption-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* Coming soon */
+  .soon {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: var(--amber);
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+  }
+  .soon-note { color: var(--muted); font-size: 14px; margin: 16px 0 0; }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    background: var(--teal);
+    color: var(--foam);
+    padding: 72px 20px;
+  }
+  .cta h2 { margin: 0 0 12px; font-size: 36px; font-weight: 900; }
+  .cta p { margin: 0 0 32px; font-size: 18px; opacity: 0.9; }
+  .cta .soon { background: var(--amber); color: #fff; }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: #fff;
+    padding: 48px 20px;
+    text-align: center;
+  }
+  footer a { color: #fff; text-decoration: none; margin: 0 12px; }
+  footer a:hover { text-decoration: underline; }
+  footer .small { color: #888; font-size: 13px; margin-top: 16px; }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 40px; }
+    .hero .tagline { font-size: 18px; }
+    .features { grid-template-columns: 1fr; }
+    .screens { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .section-title { font-size: 26px; }
+    .cta h2 { font-size: 28px; }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="badge-pill">iPhone</span>
+    <h1>HoppedUp</h1>
+    <p class="tagline">Rate the beer. Skip the account.</p>
+
+    <div class="container" style="margin-bottom: 40px;">
+      <div class="screens">
+        <div>
+          <img src="./img/nearby.png" alt="Nearby breweries list">
+          <div class="caption">Nearby</div>
+          <div class="caption-sub">Breweries closest first</div>
+        </div>
+        <div>
+          <img src="./img/map.png" alt="Breweries on a map">
+          <div class="caption">Map</div>
+          <div class="caption-sub">See what's around you</div>
+        </div>
+        <div>
+          <img src="./img/rate.png" alt="Rating a beer">
+          <div class="caption">Rate</div>
+          <div class="caption-sub">Half a star at a time</div>
+        </div>
+        <div>
+          <img src="./img/myhops.png" alt="Breweries you have visited">
+          <div class="caption">My Hops</div>
+          <div class="caption-sub">Everywhere you've been</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="soon">Coming soon to the App Store</span>
+    <p class="soon-note">Screens shown are from an in-development build.</p>
+  </div>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Get Your Hops On</h2>
+      <p class="section-sub">HoppedUp is a beer rating app with nothing bolted on. No badges, no feed, no followers — just the brewery you're standing in and the beer in front of you.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">📍</div>
+          <h3>Brewery first</h3>
+          <p>Open the app and the breweries near you are already there, closest first. Tap one to see its beers, or search by name for anywhere else.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">★</div>
+          <h3>Rate in seconds</h3>
+          <p>Beer, style, half a star at a time. Add the ABV and a short note if you want to — or don't. Your ratings are always yours to edit.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h3>Anonymous by design</h3>
+          <p>No accounts, no profiles, no usernames. Your history stays on your device, and the ratings shared with the community are never tied to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to hop on?</h2>
+    <p>HoppedUp is in testing now and heading to the App Store soon.</p>
+    <span class="soon">Coming soon</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./support.html">Support</a>
+      <a href="mailto:roughideasoftware@gmail.com">Contact</a>
+    </div>
+    <div class="small">© Rough Idea Software</div>
+  </footer>
+
+</body>
+</html>
