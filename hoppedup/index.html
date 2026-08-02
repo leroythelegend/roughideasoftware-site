@@ -99,10 +99,11 @@
 
   /* Screenshots */
   .screens { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+  .screens.three-up { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .screens.three-up img { max-width: 220px; }
   .screens img {
     max-width: 190px;
     width: 100%;
-    border-radius: 18px;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.12));
   }
   .screens .caption {
@@ -154,7 +155,7 @@
     .hero h1 { font-size: 40px; }
     .hero .tagline { font-size: 18px; }
     .features { grid-template-columns: 1fr; }
-    .screens { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .screens, .screens.three-up { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .section-title { font-size: 26px; }
     .cta h2 { font-size: 28px; }
   }
@@ -177,9 +178,9 @@
           <div class="caption-sub">Breweries closest first</div>
         </div>
         <div>
-          <img src="./img/map.png" alt="Breweries on a map">
-          <div class="caption">Map</div>
-          <div class="caption-sub">See what's around you</div>
+          <img src="./img/brewery.png" alt="A brewery's community board">
+          <div class="caption">Their board</div>
+          <div class="caption-sub">What everyone poured</div>
         </div>
         <div>
           <img src="./img/rate.png" alt="Rating a beer">
@@ -195,7 +196,7 @@
     </div>
 
     <span class="soon">Coming soon to the App Store</span>
-    <p class="soon-note">Screens shown are from an in-development build.</p>
+    <p class="soon-note">Community ratings and summaries shown are sample data.</p>
   </div>
 
   <!-- Features -->
@@ -219,6 +220,32 @@
           <div class="icon">🔒</div>
           <h3>Anonymous by design</h3>
           <p>No accounts, no profiles, no usernames. Your history stays on your device, and the ratings shared with the community are never tied to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section style="background: var(--foam); padding: 72px 20px;">
+    <div class="container">
+      <h2 class="section-title">Everyone's two cents, nobody's name</h2>
+      <p class="section-sub">Every rating is anonymous, so the numbers are the whole story. Notes are never shown to anyone — they only ever feed a summary your iPhone writes on-device.</p>
+
+      <div class="screens three-up">
+        <div>
+          <img src="./img/tophops.png" alt="Best rated beers near you">
+          <div class="caption">Top Hops</div>
+          <div class="caption-sub">Best rated near you</div>
+        </div>
+        <div>
+          <img src="./img/beer.png" alt="A beer's community rating and summary">
+          <div class="caption">The verdict</div>
+          <div class="caption-sub">Summed up by Apple Intelligence</div>
+        </div>
+        <div>
+          <img src="./img/map.png" alt="Breweries on a map">
+          <div class="caption">Map</div>
+          <div class="caption-sub">See what's around you</div>
         </div>
       </div>
     </div>
